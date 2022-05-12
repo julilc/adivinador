@@ -1,2 +1,2 @@
-js/javaScript
-js/proyecto
+js/javaScript.js
+js/proyecto.js
