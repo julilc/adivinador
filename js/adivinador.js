@@ -1,10 +1,12 @@
 function adivinanza(acertijo, respuesta){
     this.acertijo=acertijo;
     this.respuesta=respuesta;
+    respuesta.toUpperCase();
 }
 const adivinanza1=new adivinanza("Blanca por dentro, verde por fuera.\nSi no sabes, espera.\n¿Qué fruta es?","Pera");
 const adivinanza2= new adivinanza("Bonita flor que gira buscando el sol. ¿Qué es?","Girasol");
 const adivinanza3= new adivinanza("cuanto más le quitas más grande es", "Agujero");
+console.log (adivinanza1);
 let respuesta;
 const adivinanzas=[
     {acertijo:"Blanca por dentro, verde por fuera.\nSi no sabes, espera.\n¿Qué fruta es?",respuesta:"Pera"},
@@ -97,15 +99,14 @@ while(respuestaN==""){
 const adivinanza4= new adivinanza(acertijoN,respuestaN);
 adivinanza(acertijoN,respuestaN);
 alert("su adivinanza:\n"+adivinanza4.acertijo+"\n"+adivinanza4.respuesta+"\n Ha sido registrada! Muchas gracias!");
-adivinanza.push(new adivinanza(acertijo=acertijoN,respuesta=respuestaN));
+adivinanza.push(new adivinanza(acertijo=acertijoN,respuesta=respuestaN.toUpperCase()));
 }   
 
 /*lista de adivinanzas y respuestas*/
 else if (preguntaInicial==3){
-alert("El listado de adivinanzas son las siguientes");
-for (const adivinanza of adivinanzas){
-    alert(adivinanza.acertijo+"\n"+adivinanza.respuesta);
-}
+alert("Hoy se muestran las adivinanzas sobre frutas! Vuelve mañana para ver adivinanzas sobre fauna");
+const resultado = adivinanzas.filter((tema) => tema.respuesta.includes ('Pera'));
+console.log(resultado);
 alert("Esas son todas, muchas gracias por venir!")}
 
 /*datos curiosos*/
