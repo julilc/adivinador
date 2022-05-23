@@ -1,0 +1,23 @@
+html {
+  overflow-y: hidden;
+}
+html body {
+  background-image: url("../src/img/bkgDesktop.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+html body main h1, html body main h2 {
+  color: aliceblue;
+  text-align: center;
+  margin-top: 3rem;
+}
+html body main div h3 {
+  color: aliceblue;
+}
+html body main #formIng {
+  align-content: center;
+  margin-top: 7rem;
+  background-color: black;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,26 @@
+html{
+    overflow-y: hidden;
+body{
+    background-image: url('../src/img/bkgDesktop.png');
+    background-size: cover;
+    background-attachment: fixed;
+    main{   
+    h1,h2{
+        color: aliceblue;
+        text-align: center;
+        margin-top:3rem;
+    }
+    div{
+        h3{ 
+            color: aliceblue;
+        }
+    }
+    #formIng{
+        align-content: center;
+        margin-top: 7rem;
+        background-color: black;
+        
+    }
+}
+}
+}

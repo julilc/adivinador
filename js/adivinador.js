@@ -1,3 +1,4 @@
+/*
 function adivinanza(acertijo, respuesta){
     this.acertijo=acertijo;
     this.respuesta=respuesta;
@@ -22,15 +23,77 @@ const datosCuriosos=[
 ]
 
 /*Ingreso usuario*/
-let nombre = prompt("ingrese su nombre");
-let apellido = prompt("ingrese su apellido");
-let nombreCompleto= (nombre+" "+apellido);
-let contrasenia =prompt("ingrese la contrasenia");
-while(nombre=="" || apellido==""||contrasenia==""){alert ("falta un dato")
-    nombre=prompt("ingrese su nombre");
-    apellido = prompt("ingrese su apellido");
-    contrasenia= prompt("ingrese la contrasenia");
+
+let errorText= document.getElementById("errorDatos");
+let usuario = document.getElementById("usuario");
+let inputs= document.getElementById("inputs");
+let tituloForm =document.getElementById("tituloForm");
+let btnReg =document.getElementById("btnReg");
+let contrasenia =document.getElementById("contrasenia");
+let usuarioReg;
+let contraseniaReg;
+let formRegistro=document.getElementById("formRegistro");
+
+formRegistro.addEventListener("submit", validarForm);
+function validarForm(ev){
+    if((usuario.value=="")||(contrasenia.value=="")){
+    ev.preventDefault();
+    errorText.innerText=("Falta un dato!");
+    errorText.style.color="red";
     }
+    else{           
+            usuarioReg=usuario.value;
+            contraseniaReg=contrasenia.value;
+            ev.preventDefault();    
+            tituloForm.innerText=("Registro Exitoso!")    
+            inputs.style.visibility="hidden";
+            errorText.style.color="green";
+            errorText.innerText=("su informacion de cuenta es la siguiente:\n Usuario: "+usuario.value+"\n Contraseña: " +contrasenia.value +"\nPor favor recuerde estos datos para inicio de sesión.");
+            btnReg.innerText=("Iniciar Sesión"); 
+            console.log(usuarioReg);
+            console.log(contraseniaReg); 
+            
+            formRegistro.addEventListener("submit", retornarInicio);
+           
+            function retornarInicio(ev){
+            ev.preventDefault();
+            tituloForm.innerText=("Inicia Sesion");    
+            inputs.style.visibility="visible";
+            errorText.innerText="Inicie sesion con los datos anteriores";
+            
+        }
+   
+        formRegistro.addEventListener("submit", validarInicio);
+            function validarInicio(ev){
+                if((contrasenia.value!=contraseniaReg)||(usuario.value!=usuarioReg)){
+                ev.preventDefault();
+                errorText.innerText=("Falta un dato!");
+                errorText.style.color="red";    
+                }
+                else{
+                    btnReg.addEventListener("click", linkQuestions);
+                    function linkQuestions(){
+                    location.href='../questions.html';
+                    }
+                }
+            }
+        }
+    
+}
+
+    
+
+
+
+
+
+    
+
+
+
+/*
+
+
 alert("su informacion de cuenta es la siguiente:\n Nombre: "+nombreCompleto+"\n Contraseña: " +contrasenia +"\nPor favor recuerde estos datos para inicio de sesión.");
 alert("Hora de iniciar sesion!");
 let nombreInicio=prompt("ingrese su nombre de usuario");
@@ -42,9 +105,9 @@ while(nombreInicio!=nombreCompleto || contraseniaInicio!=contrasenia){alert ("fa
 let preguntaInicial;
 while((preguntaInicial!=1) &&(preguntaInicial!=2)&&(preguntaInicial!=3)&&(preguntaInicial!=4)){
     preguntaInicial= parseInt(prompt("Que desea hacer hoy?\n1.Contestar adivinanza.\n2.Crear adivinanza\n3.Ver adivinanzas y respuestas.\n4.Datos curiosos."));}
-/*Contestar adivinanza*/
+/*Contestar adivinanza
 if (preguntaInicial==1){
-    /*adivinanza1*/
+    /*adivinanza1
     alert(adivinanza1.acertijo);
     respuesta=prompt("ingrese su respuesta");
     for(let i=0; i<3; i++,respuesta!=adivinanza1.respuesta){
@@ -57,7 +120,7 @@ if (preguntaInicial==1){
     };
     alert("Sigamos con la nueva adivinanza!")
         
-    /*adivinanza2*/
+    /*adivinanza2
     alert(adivinanza2.acertijo);
     respuesta=prompt("ingrese su respuesta");
     for(let i=0; i<3; i++,respuesta!=adivinanza2.respuesta){
@@ -69,7 +132,7 @@ if (preguntaInicial==1){
         respuesta=prompt("ingrese su respuesta");
     }
     alert("Sigamos con la nueva adivinanza!")
-    /*adivinanza3*/
+    /*adivinanza3
     alert(adivinanza3.acertijo);
     respuesta=prompt("ingrese su respuesta");
     for(let i=0; i<3; i++,respuesta!=adivinanza3.respuesta){
@@ -82,7 +145,7 @@ if (preguntaInicial==1){
     alert("Se terminaron las adivinanzas! Pruebe conocer las otras partes del juego!");
 }  
 
-/*Crea tu adivinanza*/
+/*Crea tu adivinanza
 
 else if (preguntaInicial==2){
 alert("Bienvenido/a a crea tu propia adivinanza");
@@ -102,14 +165,14 @@ alert("su adivinanza:\n"+adivinanza4.acertijo+"\n"+adivinanza4.respuesta+"\n Ha 
 adivinanza.push(new adivinanza(acertijo=acertijoN,respuesta=respuestaN.toUpperCase()));
 }   
 
-/*lista de adivinanzas y respuestas*/
+/*lista de adivinanzas y respuestas
 else if (preguntaInicial==3){
 alert("Hoy se muestran las adivinanzas sobre frutas! Vuelve mañana para ver adivinanzas sobre fauna");
 const resultado = adivinanzas.filter((tema) => tema.respuesta.includes ('Pera'));
 console.log(resultado);
 alert("Esas son todas, muchas gracias por venir!")}
 
-/*datos curiosos*/
+/*datos curiosos
 else if (preguntaInicial==4){
 for (const datoCurioso of datosCuriosos){
     alert(datoCurioso.dato);
@@ -119,3 +182,29 @@ alert("Gracias por visitar nuestro sitio! Vuelve mañana para más adivinanzas y
 else{
     alert("Hubo un error, intente recargando la p[agina. Disculpe las molestias.")
 }
+*/
+
+let btnP = document.getElementById("btnP");
+btnP.addEventListener("click", bkgPrincipal);
+function bkgPrincipal(){
+    body.style.backgroundImage= 'url("../src/img/bkgDesktop.png")';
+    title.style.color="white";
+}
+document.getElementById("title")
+let btnWM = document.getElementById ("btnWM");
+function WhiteMode(){
+    document.body.style.backgroundImage='url("../src/img/bkgDesktopWM.png")';
+    title.style.color="blue";
+};
+let btnDM = document.getElementById ("btnDM");
+btnDM.addEventListener("click", darkMode);
+function darkMode(){
+    document.body.style.backgroundImage='url("../src/img/bkgDesktopDM.png")';
+    title.style.color="white";
+};
+let btnDT = document.getElementById ("btnDT");
+btnDT.addEventListener("click", accesibleMode);
+function accesibleMode(){
+    document.body.style.backgroundImage='url("../src/img/bkgDesktopDT.png")';
+    title.style.color="white";
+};
