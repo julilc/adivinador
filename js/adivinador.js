@@ -54,7 +54,6 @@ function validarForm(ev){
             console.log(contraseniaReg); 
             
             formRegistro.addEventListener("submit", retornarInicio);
-           
             function retornarInicio(ev){
             ev.preventDefault();
             tituloForm.innerText=("Inicia Sesion");    
