@@ -61,7 +61,6 @@ function validarForm(ev){
             errorText.innerText="Inicie sesion con los datos anteriores";
             
         }
-   
         formRegistro.addEventListener("submit", validarInicio);
             function validarInicio(ev){
                 if((contrasenia.value!=contraseniaReg)||(usuario.value!=usuarioReg)){
