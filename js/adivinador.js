@@ -185,7 +185,7 @@ else{
 let btnP = document.getElementById("btnP");
 btnP.addEventListener("click", bkgPrincipal);
 function bkgPrincipal(){
-    body.style.backgroundImage= 'url("../src/img/bkgDesktop.png")';
+    document.body.style.backgroundImage= 'url("../src/img/bkgDesktop.png")';
     title.style.color="white";
 }
 document.getElementById("title")
