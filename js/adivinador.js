@@ -71,7 +71,7 @@ function validarForm(ev){
                 else{
                     btnReg.addEventListener("click", linkQuestions);
                     function linkQuestions(){
-                    location.href='../questions.html';
+                    location.href='../menu.html';
                     }
                 }
             }
