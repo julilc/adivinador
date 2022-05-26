@@ -89,20 +89,7 @@ function validarForm(ev){
 
 
 
-/*
 
-
-alert("su informacion de cuenta es la siguiente:\n Nombre: "+nombreCompleto+"\n Contraseña: " +contrasenia +"\nPor favor recuerde estos datos para inicio de sesión.");
-alert("Hora de iniciar sesion!");
-let nombreInicio=prompt("ingrese su nombre de usuario");
-let contraseniaInicio=prompt("ingrese su contrasenia");
-while(nombreInicio!=nombreCompleto || contraseniaInicio!=contrasenia){alert ("falta un dato o datos incorrectos intente de nuevo, de no recordar algun dato, recargue la pagina.")
-    nombreInicio=prompt("ingrese su nombre de usuario");
-    contraseniaInicio=prompt("ingrese su contrasenia");
-    }
-let preguntaInicial;
-while((preguntaInicial!=1) &&(preguntaInicial!=2)&&(preguntaInicial!=3)&&(preguntaInicial!=4)){
-    preguntaInicial= parseInt(prompt("Que desea hacer hoy?\n1.Contestar adivinanza.\n2.Crear adivinanza\n3.Ver adivinanzas y respuestas.\n4.Datos curiosos."));}
 /*Contestar adivinanza
 if (preguntaInicial==1){
     /*adivinanza1
@@ -182,27 +169,3 @@ else{
 }
 */
 
-let btnP = document.getElementById("btnP");
-btnP.addEventListener("click", bkgPrincipal);
-function bkgPrincipal(){
-    document.body.style.backgroundImage= 'url("../src/img/bkgDesktop.png")';
-    title.style.color="white";
-}
-document.getElementById("title")
-let btnWM = document.getElementById ("btnWM");
-function WhiteMode(){
-    document.body.style.backgroundImage='url("../src/img/bkgDesktopWM.png")';
-    title.style.color="blue";
-};
-let btnDM = document.getElementById ("btnDM");
-btnDM.addEventListener("click", darkMode);
-function darkMode(){
-    document.body.style.backgroundImage='url("../src/img/bkgDesktopDM.png")';
-    title.style.color="white";
-};
-let btnDT = document.getElementById ("btnDT");
-btnDT.addEventListener("click", accesibleMode);
-function accesibleMode(){
-    document.body.style.backgroundImage='url("../src/img/bkgDesktopDT.png")';
-    title.style.color="white";
-};

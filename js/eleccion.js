@@ -1,24 +1,140 @@
-let btnP = document.getElementById("btnP");
-btnP.addEventListener("click", bkgPrincipal);
-function bkgPrincipal(){
-    document.body.style.backgroundImage= 'url("../src/img/bkgDesktop.png")';
-    title.style.color="white";
+function adivinanza(acertijo, respuesta){
+    this.acertijo=acertijo;
+    this.respuesta=respuesta;
+    respuesta.toUpperCase();
 }
-document.getElementById("title")
-let btnWM = document.getElementById ("btnWM");
-function WhiteMode(){
-    document.body.style.backgroundImage='url("../src/img/bkgDesktopWM.png")';
-    title.style.color="blue";
-};
-let btnDM = document.getElementById ("btnDM");
-btnDM.addEventListener("click", darkMode);
-function darkMode(){
-    document.body.style.backgroundImage='url("../src/img/bkgDesktopDM.png")';
-    title.style.color="white";
-};
-let btnDT = document.getElementById ("btnDT");
-btnDT.addEventListener("click", accesibleMode);
-function accesibleMode(){
-    document.body.style.backgroundImage='url("../src/img/bkgDesktopDT.png")';
-    title.style.color="white";
-};
+const adivinanza1=new adivinanza("Blanca por dentro, verde por fuera.\nSi no sabes, espera.\n¿Qué fruta es?","Pera");
+const adivinanza2= new adivinanza("Bonita flor que gira buscando el sol. ¿Qué es?","Girasol");
+const adivinanza3= new adivinanza("cuanto más le quitas más grande es", "Agujero");
+console.log (adivinanza1);
+let respuesta;
+const adivinanzas=[
+    {acertijo:"Blanca por dentro, verde por fuera.\nSi no sabes, espera.\n¿Qué fruta es?",respuesta:"Pera"},
+    {acertijo:"Bonita flor que gira buscando el sol. ¿Qué es?",respuesta:"Girasol"},
+    {acertijo:"cuanto más le quitas más grande es",respuesta:"Agujero"},
+]
+
+let adivinanzaHTML= document.getElementById("adivinanza")
+let respuesta1 = document.getElementById("respuesta1");
+let respuesta2=document.getElementById("respuesta2");
+let respuesta3=document.getElementById("respuesta3");
+let respuestaHTML=document.querySelectorAll(".botones");
+let btnAcertijo=document.getElementById("continuarAceritjo")
+let alertaResp = document.getElementById("alertaRespuesta");
+let boxResp=document.getElementById("opResp");
+let btnAcertijo2=document.getElementById("continuarAceritjo2");
+function adivinanzaP(){
+    adivinanzaHTML.innerText=adivinanza1.acertijo;
+    respuesta1.innerText=("Limón");
+    respuesta2.innerText=(adivinanza1.respuesta);
+    respuesta3.innerText=("Manzana");
+    btnAcertijo.style.visibility="hidden";
+    btnAcertijo2.style.visibility="hidden";
+    let validarResp = function validarResp(){
+        respuesta=this.innerText;
+        console.log(respuesta);
+        for(let i=0; i<2; i++,respuesta!=adivinanza1.respuesta){
+            if(respuesta==adivinanza1.respuesta){
+            adivinanzaHTML.innerText=("Respuesta correcta! pasemos a la siguiente adivinanza!");
+            adivinanzaHTML.style.color="green";
+            adivinanzaHTML.style.paddingBottom="3rem";
+            alertaResp.innerText="";
+            btnAcertijo.style.visibility="visible";
+            btnAcertijo.style="btn btn-outline-light p-3"
+            btnAcertijo.style.width="50%"
+            btnAcertijo.style.alignSelf="center"
+        
+            break;
+            }
+            alertaResp.innerText=("respuesta incorrecta, le quedan "+(2-i)+" intentos");
+            alertaResp.style.color="red";
+            alertaResp.style.alignSelf="center";
+            alertaResp.style.paddingBottom="3rem";
+        };
+    
+    }
+respuestaHTML.forEach(boton=>{
+boton.addEventListener("click", validarResp);});
+/*acertijo2*/
+btnAcertijo.addEventListener("click",siguienteAcertijo);
+function siguienteAcertijo(){
+    adivinanzaHTML.innerText=adivinanza2.acertijo;
+    respuesta1.innerText=("Rosa");
+    respuesta2.innerText=("Margarita");
+    respuesta3.innerText=(adivinanza2.respuesta); 
+    adivinanzaHTML.style.color="aliceblue"
+    adivinanzaHTML.style.textAlign="center";
+    adivinanzaHTML.style.marginTop="3rem";
+    btnAcertijo.style.visibility="hidden"; 
+    
+
+    let validarResp = function validarResp2(){
+    respuesta=this.innerText;
+    btnAcertijo2.style.visibility="hidden";
+    for(let i=0; i<3; i++,respuesta!=adivinanza2.respuesta){
+        if(respuesta==adivinanza2.respuesta){
+            adivinanzaHTML.innerText=("Respuesta correcta! pasemos a la siguiente adivinanza!");
+            adivinanzaHTML.style.color="green";
+            adivinanzaHTML.style.paddingBottom="3rem";
+            alertaResp.innerText="";
+            btnAcertijo2.style.visibility="hidden";
+            btnAcertijo2.style="btn btn-outline-light p-3"
+            btnAcertijo2.style.width="50%"
+            btnAcertijo2.style.alignSelf="center"
+            
+        
+            break;
+        }
+        alertaResp.innerText=("respuesta incorrecta, le quedan "+(2-i)+" intentos");
+        alertaResp.style.color="red";
+        alertaResp.style.alignSelf="center";
+        alertaResp.style.paddingBottom="3rem";
+        alertaResp.visibility="visible";}
+
+    }
+
+respuestaHTML.forEach(boton=>{
+boton.addEventListener("click", validarResp);})
+
+}
+
+/*acertijo3*/
+btnAcertijo2.addEventListener("click",siguienteAcertijo2)
+
+function siguienteAcertijo2(){
+    adivinanzaHTML.innerText=adivinanza3.acertijo;
+    respuesta3.innerText=("Anillo");
+    respuesta2.innerText=("Barril");
+    respuesta1.innerText=(adivinanza3.respuesta); 
+    adivinanzaHTML.style.color="aliceblue"
+    adivinanzaHTML.style.textAlign="center";
+    adivinanzaHTML.style.marginTop="3rem";
+    btnAcertijo2.style.visibility="hidden"; 
+
+    
+
+    let validarResp = function validarResp2(){
+    respuesta=this.innerText;
+    btnAcertijo2.style.visibility="hidden";
+    for(let i=0; i<3; i++,respuesta!=adivinanza3.respuesta){
+        if(respuesta==adivinanza3.respuesta){
+            adivinanzaHTML.innerText=("Respuesta correcta! Se han terminado las adivinanzas por hoy! Prueba las otras funciones del sitio!")
+            adivinanzaHTML.style.color="green";
+            adivinanzaHTML.style.paddingBottom="3rem";
+            alertaResp.innerText="";
+            btnAcertijo2.style.visibility="hidden";
+
+        
+            break;
+        }
+        alertaResp.innerText=("respuesta incorrecta, le quedan "+(2-i)+" intentos");
+        alertaResp.style.color="red";
+        alertaResp.style.alignSelf="center";
+        alertaResp.style.paddingBottom="3rem";
+        alertaResp.visibility="visible";}
+    }
+
+respuestaHTML.forEach(boton=>{
+boton.addEventListener("click", validarResp);})
+}
+}

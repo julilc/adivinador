@@ -1,26 +1,67 @@
 html{
-    overflow-y: hidden;
+    
 body{
     background-image: url('../src/img/bkgDesktop.png');
     background-size: cover;
     background-attachment: fixed;
-    main{   
-    h1,h2{
-        color: aliceblue;
-        text-align: center;
-        margin-top:3rem;
-    }
-    div{
-        h3{ 
-            color: aliceblue;
+    
+        main{   
+            h1,h2{
+                color: aliceblue;
+                text-align: center;
+                margin-top:3rem;
+            }
+            div{
+                h3{ 
+                    color: aliceblue;
+                }
+            }
+            #formIng{
+                align-content: center;
+                margin-top: 7rem;
+                background-color: black;
+                
+            }
+            #boxAcertijo{
+                height: 30rem;
+                margin: 6rem;
+                align-content: center;
+                display: flex; 
+                flex-direction: column;
+                justify-content: space-evenly;
+                justify-content: center;
+                #adivinanza{
+                    width: 100%;
+                    padding-top: 3rem;
+                    margin-bottom: 1rem;
+                    
+                }
+                #opResp{
+                    
+                    button{
+                    margin: 3rem;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    padding-bottom: 1rem;
+                    padding-top: 1rem;
+                    #continuarAceritjo{
+                        display:none;
+                        
+                    }
+                    #continuarAceritjo2{
+                        display: none;
+                    }
+                    #opResp{
+                        text-align: center;
+                    }
+                }
+            
+                    
+                }   
+            }
+        #inicio{
+            text-align: center; 
+        }
         }
     }
-    #formIng{
-        align-content: center;
-        margin-top: 7rem;
-        background-color: black;
-        
-    }
-}
-}
 }
