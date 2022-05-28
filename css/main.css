@@ -1,3 +1,9 @@
+html {
+  height: auto;
+}
+html .heighInd {
+  overflow-y: hidden;
+}
 html body {
   background-image: url("../src/img/bkgDesktop.png");
   background-size: cover;

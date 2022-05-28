@@ -1,5 +1,8 @@
 html{
-    
+    .heighInd{
+        overflow-y: hidden;
+    }
+    height: auto;
 body{
     background-image: url('../src/img/bkgDesktop.png');
     background-size: cover;

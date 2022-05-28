@@ -1,18 +1,3 @@
-function adivinanza(acertijo, respuesta){
-    this.acertijo=acertijo;
-    this.respuesta=respuesta;
-    respuesta.toUpperCase();
-}
-const adivinanza1=new adivinanza("Blanca por dentro, verde por fuera.\nSi no sabes, espera.\n¿Qué fruta es?","Pera");
-const adivinanza2= new adivinanza("Bonita flor que gira buscando el sol. ¿Qué es?","Girasol");
-const adivinanza3= new adivinanza("cuanto más le quitas más grande es", "Agujero");
-console.log (adivinanza1);
-let respuesta;
-const adivinanzas=[
-    {acertijo:"Blanca por dentro, verde por fuera.\nSi no sabes, espera.\n¿Qué fruta es?",respuesta:"Pera"},
-    {acertijo:"Bonita flor que gira buscando el sol. ¿Qué es?",respuesta:"Girasol"},
-    {acertijo:"cuanto más le quitas más grande es",respuesta:"Agujero"},
-]
 
 let adivinanzaHTML= document.getElementById("adivinanza")
 let respuesta1 = document.getElementById("respuesta1");
@@ -23,13 +8,14 @@ let btnAcertijo=document.getElementById("continuarAceritjo")
 let alertaResp = document.getElementById("alertaRespuesta");
 let boxResp=document.getElementById("opResp");
 let btnAcertijo2=document.getElementById("continuarAceritjo2");
+let nombreUsuariols = sessionStorage.getItem('Nombre Usuario');
 function adivinanzaP(){
     adivinanzaHTML.innerText=adivinanza1.acertijo;
     respuesta1.innerText=("Limón");
     respuesta2.innerText=(adivinanza1.respuesta);
     respuesta3.innerText=("Manzana");
     btnAcertijo.style.visibility="hidden";
-    btnAcertijo2.style.visibility="hidden";
+    btnAcertijo2.style.visibility="hidden";}
     let validarResp = function validarResp(){
         respuesta=this.innerText;
         console.log(respuesta);
@@ -56,8 +42,7 @@ function adivinanzaP(){
 respuestaHTML.forEach(boton=>{
 boton.addEventListener("click", validarResp);});
 /*acertijo2*/
-btnAcertijo.addEventListener("click",siguienteAcertijo);
-function siguienteAcertijo(){
+btnAcertijo.addEventListener("click",()=>{
     adivinanzaHTML.innerText=adivinanza2.acertijo;
     respuesta1.innerText=("Rosa");
     respuesta2.innerText=("Margarita");
@@ -96,12 +81,10 @@ function siguienteAcertijo(){
 respuestaHTML.forEach(boton=>{
 boton.addEventListener("click", validarResp);})
 
-}
+});
 
 /*acertijo3*/
-btnAcertijo2.addEventListener("click",siguienteAcertijo2)
-
-function siguienteAcertijo2(){
+btnAcertijo2.addEventListener("click",()=>{
     adivinanzaHTML.innerText=adivinanza3.acertijo;
     respuesta3.innerText=("Anillo");
     respuesta2.innerText=("Barril");
@@ -111,14 +94,12 @@ function siguienteAcertijo2(){
     adivinanzaHTML.style.marginTop="3rem";
     btnAcertijo2.style.visibility="hidden"; 
 
-    
-
     let validarResp = function validarResp2(){
     respuesta=this.innerText;
     btnAcertijo2.style.visibility="hidden";
     for(let i=0; i<3; i++,respuesta!=adivinanza3.respuesta){
         if(respuesta==adivinanza3.respuesta){
-            adivinanzaHTML.innerText=("Respuesta correcta! Se han terminado las adivinanzas por hoy! Prueba las otras funciones del sitio!")
+            adivinanzaHTML.innerText=("Felicidades "+nombreUsuariols+"!\nRespuesta correcta! Se han terminado las adivinanzas por hoy! Prueba las otras funciones del sitio!")
             adivinanzaHTML.style.color="green";
             adivinanzaHTML.style.paddingBottom="3rem";
             alertaResp.innerText="";
@@ -136,5 +117,4 @@ function siguienteAcertijo2(){
 
 respuestaHTML.forEach(boton=>{
 boton.addEventListener("click", validarResp);})
-}
-}
+});
