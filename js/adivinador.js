@@ -48,7 +48,7 @@ function validarForm(ev){
                 else{
                     btnReg.addEventListener("click", linkQuestions);
                     function linkQuestions(){
-                    location.href='C:/JavaScript/proyecto/menu.html';
+                    location.href='../menu.html';
                     }
                 }
             }

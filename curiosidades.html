@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos curiosos</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<main>
+    <div>
+        <button id="btnP"  onclick="bkgPrincipal()" type="button" class="btn btn-info">Normal Mode</button>
+        <button id="btnWM" onclick="WhiteMode();" type="button" class="btn btn-light">Light Mode</button>
+        <button id="btnDM" onclick="darkMode()" type="button" class="btn btn-dark">Dark Mode</button>
+        <button id="btnDT" onclick="accesibleMode()" type="button" class="btn btn-success">Modo Accesible</button>
+    </div>
+
+
+    <h1>¿Sabias esto?</h1> 
+    <div class="card-deck row row-cols-10 cols-md-2 g-2 m-5">
+        <div class="row cols-md-2 cols-sm-1">
+        <div class="card bg-dark col">
+          <img class="card-img-top img-fluid mt-1 h-50" src="src/img/cerebro.webp" alt="Card image cap">
+          <div class="card-body">
+            <h3 id="autor1" class="card-title"></h3>
+            <p id="curio1" class="card-text text-white"></p>
+          </div>
+        </div>
+        <div class="card m-1 bg-dark col">
+            <img class="card-img-top img-fluid mt-1 h-50" src="src/img/logica.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h3 id="autor2" class="card-title"></h3>
+              <p id="curio2" class="card-text text-white"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card m-1 bg-dark col">
+            <img class="card-img-top img-fluid h-50 mt-1" src="src/img/concepto.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h3 id="autor3" class="card-title"></h3>
+              <p id="curio3" class="card-text text-white"></p>
+            </div>
+          </div>
+          <div class="card m-1 bg-dark col">
+            <img class="card-img-top img-fluid mt-1 h-50" src="src/img/memorizar.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h3 id="autor4" class="card-title"></h3>
+              <p id="curio4" class="card-text text-white"></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+</main>
+</body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="js\btn.js" ></script>
+<script src="js\datosCuriosos.js"></script>
+</html>

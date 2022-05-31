@@ -14,10 +14,4 @@ const adivinanzas=[
     {acertijo:"Bonita flor que gira buscando el sol. ¿Qué es?",respuesta:"Girasol"},
     {acertijo:"cuanto más le quitas más grande es",respuesta:"Agujero"},
 ]
-const datosCuriosos=[
-    {dato:"Los juegos de ingenio son excelentes formas de mantenernos mentalmente activos" , autor:"curiosidadescuriosas"},
-    {dato:"Las adivinanzas mejoran la lógica y el pensamiento crítico.", autor:"editorial geu"},
-    {dato:"Favorecen el desarrollo y la asociación de ideas y conceptos.", autor:"Bosque de Fantasias"},
-    {dato:"Jugar a las adivinanzas ayuda a desarrollar la paciencia, darse tiempo para escuchar, aprender a memorizar, interpretar, razonar, prestar atención, concentrarse, comprender el lenguaje articulado, asociar ideas, motivarse, y así sucesivamente.",autor:"eresmama.com"}
 
-]

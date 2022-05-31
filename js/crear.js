@@ -8,7 +8,7 @@ adivinanzas.push(new adivinanza("Blanca por dentro, verde por fuera.\nSi no sabe
 adivinanzas.push(new adivinanza("Bonita flor que gira buscando el sol. ¿Qué es?","Girasol"));
 adivinanzas.push(new adivinanza("cuanto más le quitas más grande es", "Agujero"));
 const guardarLocal=(clave,valor)=>{localStorage.setItem(clave,valor)};
-guardarLocal("Lista adivinanzas",JSON.stringify(adivinanzas));
+guardarLocal("Adivinanzas",JSON.stringify(adivinanzas));
 let formAcertijo= document.getElementById("formAcertijo");
 let textIncompleta= document.getElementById("errorDatos");
 let btnEnviarAcertijo = document.getElementById("btnSubAcertijo");
@@ -27,7 +27,7 @@ function subAcertijo(ev){
             acertijo=acertijoIn.value;
             respuesta=respuestaIn.value;
             adivinanzas.push(new adivinanza(acertijo,respuesta));
-            guardarLocal("Lista adivinanzas",JSON.stringify(adivinanzas));
+            guardarLocal("Adivinanzas",JSON.stringify(adivinanzas));
             ev.preventDefault();    
             inputs.style.visibility="hidden";
             textIncompleta.style.color="green";
