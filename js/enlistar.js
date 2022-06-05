@@ -16,23 +16,12 @@ adv3.innerText=listAdivinanzas[2].acertijo;
 let rta3=document.getElementById("rtadv3");
 rta3.innerText=listAdivinanzas[2].respuesta;
 
-/*if listAdivinanzas[3]=true{
-let espacioAdivinanza=document.getElementById("otraAdivinanza")
-espacioAdivinanza.innerHTML(
-    <div class="card text-center">
-    <div class="card-header bg-dark">
-    </div>
-    <div class="card-body bg-dark">
-    <h3 class="card-title">(listAdivinanzas[3].aertijo</h3>
-    <p class="card-text"></p>
-    <a class="btn btn-outline-light">listAdivinanzas[3].respuesta</a>
-    </div>
-    <div class="card-footer bg-dark"></div>
-</div>
-</div>
-</div>
-)
-}*/
+let advE=document.getElementById("advE")
+let rtaE= document.getElementById("rtadvE")
+advE.innerText=(listAdivinanzas[3]?.acertijo||"No hay más adivinanzas");
+rtaE.innerText=(listAdivinanzas[3]?.respuesta||(rtaE.style.display="none"))
+
+
 /*const listAdivinanzas= JSON.parse(localStorage.getItem('Adivinanzas'))||[];
 console.log(listAdivinanzas);*/
 

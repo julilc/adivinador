@@ -61,17 +61,4 @@ else if (preguntaInicial==3){
 alert("Hoy se muestran las adivinanzas sobre frutas! Vuelve mañana para ver adivinanzas sobre fauna");
 const resultado = adivinanzas.filter((tema) => tema.respuesta.includes ('Pera'));
 console.log(resultado);
-alert("Esas son todas, muchas gracias por venir!")}
-
-/*datos curiosos
-else if (preguntaInicial==4){
-for (const datoCurioso of datosCuriosos){
-    alert(datoCurioso.dato);
-}
-alert("Gracias por visitar nuestro sitio! Vuelve mañana para más adivinanzas y datos curiosos!")
-}
-else{
-    alert("Hubo un error, intente recargando la p[agina. Disculpe las molestias.")
-}
-*/
-
+alert("Esas son todas, muchas gracias por venir!")}*/

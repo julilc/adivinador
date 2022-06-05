@@ -30,11 +30,14 @@ html body main #boxAcertijo {
   flex-direction: column;
   justify-content: space-evenly;
   justify-content: center;
+  padding-bottom: 3rem;
 }
 html body main #boxAcertijo #adivinanza {
   width: 100%;
   padding-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
+  padding-bottom: rem;
+  text-align: center;
 }
 html body main #boxAcertijo #opResp button {
   margin: 3rem;
@@ -44,13 +47,26 @@ html body main #boxAcertijo #opResp button {
   padding-top: 1rem;
 }
 html body main #boxAcertijo #opResp button #continuarAceritjo {
-  display: none;
+  align-self: center;
+  width: 50%;
 }
 html body main #boxAcertijo #opResp button #continuarAceritjo2 {
-  display: none;
+  align-self: center;
+  width: 50%;
 }
 html body main #boxAcertijo #opResp button #opResp {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  align-self: center;
   text-align: center;
+  padding-bottom: 0rem;
+}
+html body main #boxAcertijo #alertaRespuesta {
+  align-self: center;
+  text-align: center;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  padding-bottom: 3rem;
 }
 html body main #inicio {
   text-align: center;

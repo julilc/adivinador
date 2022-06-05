@@ -33,10 +33,13 @@ body{
                 flex-direction: column;
                 justify-content: space-evenly;
                 justify-content: center;
+                padding-bottom: 3rem;
                 #adivinanza{
                     width: 100%;
                     padding-top: 3rem;
-                    margin-bottom: 1rem;
+                    margin-bottom: 0rem;
+                    padding-bottom: rem;
+                    text-align: center;
                     
                 }
                 #opResp{
@@ -48,19 +51,29 @@ body{
                     padding-bottom: 1rem;
                     padding-top: 1rem;
                     #continuarAceritjo{
-                        display:none;
-                        
+                        align-self: center;  
+                        width: 50%;
                     }
-                    #continuarAceritjo2{
-                        display: none;
+                    #continuarAceritjo2{  
+                        align-self: center;
+                        width: 50%;
                     }
                     #opResp{
+                        margin-top: 1rem;
+                        margin-bottom: 0rem;
+                        align-self: center;
                         text-align: center;
+                        padding-bottom: 0rem;
                     }
-                }
-            
-                    
+                    } 
                 }   
+                #alertaRespuesta{
+                    align-self: center;
+                    text-align: center;
+                    margin-top: 0rem;
+                    margin-bottom: 0rem;
+                    padding-bottom: 3rem;
+                }
             }
         #inicio{
             text-align: center; 

@@ -3,12 +3,6 @@ function adivinanza(acertijo, respuesta){
     this.respuesta=respuesta;
     respuesta.toUpperCase();
 }
-const adivinanzas=[]
-adivinanzas.push(new adivinanza("Blanca por dentro, verde por fuera.\nSi no sabes, espera.\n¿Qué fruta es?","Pera"));
-adivinanzas.push(new adivinanza("Bonita flor que gira buscando el sol. ¿Qué es?","Girasol"));
-adivinanzas.push(new adivinanza("cuanto más le quitas más grande es", "Agujero"));
-const guardarLocal=(clave,valor)=>{localStorage.setItem(clave,valor)};
-guardarLocal("Adivinanzas",JSON.stringify(adivinanzas));
 let formAcertijo= document.getElementById("formAcertijo");
 let textIncompleta= document.getElementById("errorDatos");
 let btnEnviarAcertijo = document.getElementById("btnSubAcertijo");
@@ -36,8 +30,8 @@ function subAcertijo(ev){
             console.log(acertijo);
             console.log(respuesta); 
             formAcertijo.addEventListener("submit", retornarAcertijo);
-            function retornarAcertijo(ev){
-            ev.preventDefault();
+            function retornarAcertijo(){
+            formAcertijo.reset();
             inputs.style.visibility="visible";
             btnEnviarAcertijo.innerText=("Guardar");   
         }
