@@ -40,11 +40,3 @@ else{
         const date = DateTime.now().toLocaleString();
         const hour = now.hour.toString() + " : " + now.minute.toString(); now.toString(); dateHTML.innerHTML = hour;
 
-
-
-        /*lista de adivinanzas y respuestas
-        else if (preguntaInicial==3){
-        alert("Hoy se muestran las adivinanzas sobre frutas! Vuelve mañana para ver adivinanzas sobre fauna");
-        const resultado = adivinanzas.filter((tema) => tema.respuesta.includes ('Pera'));
-        console.log(resultado);
-        alert("Esas son todas, muchas gracias por venir!")}*/

@@ -20,8 +20,3 @@ let advE=document.getElementById("advE")
 let rtaE= document.getElementById("rtadvE")
 advE.innerText=(listAdivinanzas[3]?.acertijo||"No hay más adivinanzas");
 rtaE.innerText=(listAdivinanzas[3]?.respuesta||(rtaE.style.display="none"))
-
-
-/*const listAdivinanzas= JSON.parse(localStorage.getItem('Adivinanzas'))||[];
-console.log(listAdivinanzas);*/
-
