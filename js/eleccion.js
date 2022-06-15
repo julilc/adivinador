@@ -8,7 +8,6 @@ let btnAcertijo = document.getElementById("continuarAceritjo")
 let alertaResp = document.getElementById("alertaRespuesta");
 let btnAcertijo2 = document.getElementById("continuarAceritjo2");
 let nombreUsuariols = sessionStorage.getItem('Nombre Usuario');
-
 function adivinanzaP() {
     adivinanzaHTML.innerText = listAdivinanzas[0].acertijo;
     respuesta1.innerText = ("Manzana");
@@ -18,6 +17,9 @@ function adivinanzaP() {
     alertaResp.style.display="none";
     btnAcertijo.style.display="none";
     btnAcertijo2.style.display="none";
+    setTimeout(()=>{
+        alert("psita: empieza con P")
+    }, 4000);
 };
 
 
@@ -52,6 +54,9 @@ btnAcertijo.addEventListener("click", () => {
     alertaResp.style.display="none";
     btnAcertijo.style.display="none";
     btnAcertijo2.style.display="none";
+    setTimeout(()=>{
+        alert("psita: se forma sumando Gira+Sol")
+    }, 4000);
 });
 respuestaHTML.forEach(boton => {
     boton.addEventListener("click", (e) => {
@@ -84,6 +89,9 @@ btnAcertijo2.addEventListener("click", () => {
     alertaResp.style.display="none";
     btnAcertijo.style.display="none";
     btnAcertijo2.style.display="none";
+    setTimeout(()=>{
+        alert("psita: cuando se taladra una pared se forma un...")
+    }, 4000);
 });
 respuestaHTML.forEach(boton => {
     boton.addEventListener("click", (e) => {
