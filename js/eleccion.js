@@ -44,6 +44,9 @@ function validarRespuesta(indiceAdiv, countResp) {
                 alertaResp.innerText = ("respuesta incorrecta, le quedan " + (countResp--) + " intentos");
                 alertaResp.style.color = "red";
                 alertaResp.style.display = "block";
+                setTimeout(()=>{
+                    alert("Pista:"+listAdivinanzas[indiceAdiv].pista)
+                }, 4000);
                 if (countResp < 0) {
                     alert("se te acabaron las posibilidades")
                     location.href = "menu.html"
