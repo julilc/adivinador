@@ -1,0 +1,4 @@
+Puntos pendientes:
+responsive 100%
+Mejorar condiciones de input usuario
+solucionar lo de errores maximos por pregunta
