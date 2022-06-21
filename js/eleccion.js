@@ -7,7 +7,7 @@ let btnAcertijo = document.getElementById("continuarAceritjo")
 let alertaResp = document.getElementById("alertaRespuesta");
 let nombreUsuariols = sessionStorage.getItem('Nombre Usuario');
 let indiceAdiv = 0;
-let contResp = 3;
+
 
 function adivinanzaP(indiceAdiv, countResp) {
     if (indiceAdiv == 3)() => {
@@ -17,7 +17,7 @@ function adivinanzaP(indiceAdiv, countResp) {
         btnAcertijo.innerText = "volver a inicio"
         btnAcertijo.style.alignSelf = "center";
     }
-    countResp = 3
+ 
     adivinanzaHTML.innerText = (listAdivinanzas[indiceAdiv].acertijo)
     respuesta1.innerText = (listAdivinanzas[indiceAdiv].respInco1);
     respuesta3.innerText = (listAdivinanzas[indiceAdiv].respInco2);
@@ -25,10 +25,11 @@ function adivinanzaP(indiceAdiv, countResp) {
     adivinanzaHTML.style.color = "aliceblue"
     alertaResp.style.display = "none";
     btnAcertijo.style.display = "none";
-    validarRespuesta(indiceAdiv, countResp);
+    validarRespuesta();
 };
 
-function validarRespuesta(indiceAdiv, countResp) {
+function validarRespuesta() {
+    let countResp=3;
     let btnAcertijo = document.getElementById("continuarAceritjo")
     let respuestaHTML = document.querySelectorAll(".botones");
     respuestaHTML.forEach(boton => {
@@ -40,13 +41,16 @@ function validarRespuesta(indiceAdiv, countResp) {
                 alertaResp.style.display = "none";
                 btnAcertijo.style.display = "block";
                 btnAcertijo.style.alignSelf = "center";
+                countResp=3;
             } else {
                 alertaResp.innerText = ("respuesta incorrecta, le quedan " + (countResp--) + " intentos");
                 alertaResp.style.color = "red";
                 alertaResp.style.display = "block";
-                setTimeout(()=>{
-                    alert("Pista:"+listAdivinanzas[indiceAdiv].pista)
-                }, 4000);
+                Toastify({
+                    text: "Pista:"+listAdivinanzas[indiceAdiv].pista,
+                    duration: 2000,
+                }).showToast();
+
                 if (countResp < 0) {
                     alert("se te acabaron las posibilidades")
                     location.href = "menu.html"

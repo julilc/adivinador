@@ -11,7 +11,7 @@ let contraseniaReg;
 let formRegistro = document.getElementById("formRegistro");
 formRegistro.addEventListener("submit", (ev) => {
     ev.preventDefault();        
-    if ((usuario.value != "") && (contrasenia.value != "")) {
+    if ((usuario.value != "") && (contrasenia.value != "")&&(usuario.value.length>5)&&(contrasenia.value.length>5)) {
         if ((contrasenia.value == contraseniaReg) && (usuario.value == usuarioReg)) {
             location.href = '../menu.html';
         }
@@ -30,7 +30,7 @@ formRegistro.addEventListener("submit", (ev) => {
             } 
 }
 else{
-    errorText.innerText = ("Falta un dato");
+    errorText.innerText = ("Falta un dato o el usuario y contraseña no supera las 5 letras");
     errorText.style.color = "red";
 }})
 

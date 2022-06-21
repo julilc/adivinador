@@ -23,6 +23,7 @@
     "nodemon": "^2.0.16"
   },
   "dependencies": {
-    "sweetalert2": "^11.4.17"
+    "sweetalert2": "^11.4.17",
+    "toastify-js": "^1.11.2"
   }
 }
