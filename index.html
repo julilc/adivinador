@@ -27,14 +27,15 @@
                   <div class="mb-md-4 mt-md-4 pb-5">
                   <form id="formRegistro">
                     <h2 id="tituloForm" class="fw-bold mb-2 text-uppercase">Registrate!</h2>
+                    <h4>No se permiten espacios, mínimo 5 caracteres, máx 12</h4>
                     <div id="inputs">  
                     <div class="form-outline form-white mb-4 mt-4">
-                      <input type="text" id="usuario" class="form-control form-control-lg" />
+                      <input type="text" id="usuario" class="form-control form-control-lg" pattern="[A-Z, a-z, 0-9_-]{5,12}" />
                       <label class="form-label" for="usuario">Usuario</label>
                     </div>
       
                     <div class="form-outline form-white mb-1">
-                      <input item type="password" id="contrasenia" class="form-control form-control-lg" />
+                      <input item type="password" id="contrasenia" class="form-control form-control-lg"  pattern="[A-Z, a-z, 0-9_-]{5,12}"/>
                       <label class="form-label" for="contrasenia">Contraseña</label>
                     </div>
                   </div>

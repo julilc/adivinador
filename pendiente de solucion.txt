@@ -1,3 +1,0 @@
-Puntos pendientes:
-responsive 100%
-Mejorar condiciones de input usuario
